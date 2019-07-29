@@ -1,18 +1,15 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import Credit_page from "./components/credit";
-import Debit_page from "./components/debit";
+import React from "react"
+import {BrowserRouter as Router,Switch,Route} from react-router-dom;
+import Home from './Components/Home';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          Hello
-          <Credit_page />
-          <Debit_page />
-        </div>
-      </Router>
-    );
-  }
+class App extends React.Component {
+	render(){
+	return(
+		<Router>
+		  <Switch>
+			<Route path='/' Component={Home}/>
+		  </Switch>
+		</Router>
+	);
+	}
 }
