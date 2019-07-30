@@ -1,5 +1,6 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
+import './Login.css';
 
 class LogIn extends React.Component {
     constructor() {
@@ -35,12 +36,14 @@ class LogIn extends React.Component {
           <div className="LogIn">
             <form onSubmit={this.handleSubmit}>
               <div>
-                <label htmlFor="userName">User Name</label>
-                <input type="text" name="userName" onChange={this.handleChange} value={this.state.user.userName} />
+                <label htmlFor="userName">User Name: </label>
+                <input type="text" name="userName" onChange={this.handleChange} value={this.state.user.userName} required/>
               </div>
               <div>
-                <label htmlFor="password">Password</label>
-                <input type="password" name="password" />
+                <label htmlFor="password">Password: </label>
+                <input type="password" name="password" required/>
+                {/*The min length fields are not working as intended
+                  Replaced with required*/}
               </div>
               <button>Log In</button>
             </form>

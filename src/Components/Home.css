@@ -2,3 +2,22 @@ img{
     height: 10vh;
     width: 10vw;
 }
+
+.Home{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Home p, .Home div{
+    font-size: 30px;
+}
+
+.Home h1{
+    font-size: 60px;
+}
+
+.Home:last-child{
+    font-size: 40px;
+}
