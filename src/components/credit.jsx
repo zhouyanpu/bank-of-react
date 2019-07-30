@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import Infobox from "./infoBox";
 
-class Credit_page extends Component {
+class CreditPage extends Component {
   state = { data: [], total: 0, des: "", amo: "", key: 666 };
 
   componentDidMount = async () => {
@@ -70,4 +70,4 @@ class Credit_page extends Component {
   }
 }
 
-export default Credit_page;
+export default CreditPage;

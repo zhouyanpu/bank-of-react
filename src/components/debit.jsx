@@ -3,10 +3,10 @@ import React, { Component } from "react";
 import axios from "axios";
 import Infobox from "./infoBox";
 
-class Debit_page extends Component {
+class DebitPage extends Component {
   state = { data: [], total: 0, des: "", amo: "", key: 7867 };
 
-  componentDidMount = async () => {
+  async componentDidMount() {
     const res = await axios.get("https://moj-api.herokuapp.com/debits");
     await this.setState({ data: res.data });
     let sum = 0;
@@ -15,7 +15,7 @@ class Debit_page extends Component {
     }
     await this.setState({ total: sum });
     console.log(this.state.total);
-  };
+  }
   desChange = async ev => {
     await this.setState({ des: ev.target.value });
     console.log(this.state.des);
@@ -70,4 +70,4 @@ class Debit_page extends Component {
   }
 }
 
-export default Debit_page;
+export default DebitPage;
