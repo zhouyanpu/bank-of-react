@@ -45,8 +45,8 @@ class Debit_page extends Component {
   render() {
     return (
       <div className="whole">
-        <h1>Debit</h1>
-        <h3>Account Balance: </h3>
+        <h1>Debit: {this.props.debitBalance}</h1>
+        <h3>Account Balance: {this.props.creditBalance}</h3>
         <h3>Total Debits: {this.state.total}</h3>
         {/* <Inputbar change={this.updateZip} search={this.search} /> */}
 
