@@ -61,6 +61,12 @@ class App extends Component {
         debitBalance : input
       })
     }
+
+    const updateCred = (input) => {
+      this.setState({
+        CreditBalance : input
+      })
+    }
     const DebitComponent = () => (
       <DebitPage
         debitBalance={this.state.debitBalance}
@@ -69,10 +75,13 @@ class App extends Component {
         updateDeb={updateDeb}
       />
     );
+    console.log(this.state.CreditBalance);
     const CreditComponent = () => (
       <CreditPage
-        creditBalance={this.state.creditBalance}
+        creditBalance={this.state.CreditBalance}
         accountBalance={this.state.accountBalance}
+        updateAcc={updateAcc}
+        updateCred={updateCred}
       />
     );
 

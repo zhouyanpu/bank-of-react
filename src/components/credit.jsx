@@ -40,15 +40,23 @@ class CreditPage extends Component {
       });
       await this.setState({ data: this.state.data });
     }
+    let sum = 0;
+    for (let i = 0; i < this.state.data.length; i++) {
+      sum += this.state.data[i].amount; 
+    }
+    await this.setState({ total: sum });
     // console.log(this.state.data[3]);
+    this.props.updateAcc(this.props.accountBalance-this.state.amo);
+    this.props.updateCred(this.props.creditBalance+parseFloat(this.state.amo));
   };
 
   render() {
+    console.log(this.props.creditBalance);
     return (
       <div className="whole">
         <h1>Credit</h1>
-        <h3>Account Balance: </h3>
-        <h3>Total Credits: {this.state.total}</h3>
+        <h3>Account Balance: {this.props.accountBalance}</h3>
+        <h3>Total Credits: {this.props.creditBalance}</h3>
         {/* <Inputbar change={this.updateZip} search={this.search} /> */}
 
         <div className="disbox">

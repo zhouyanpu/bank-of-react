@@ -40,15 +40,22 @@ class DebitPage extends Component {
       });
       await this.setState({ data: this.state.data });
     }
+    let sum = 0;
+    for (let i = 0; i < this.state.data.length; i++) {
+      sum += this.state.data[i].amount; 
+    }
+    await this.setState({ total: sum });
     // console.log(this.state.data[3]);
+    this.props.updateAcc(this.props.accountBalance-this.state.amo);
+    this.props.updateDeb(this.props.debitBalance+parseFloat(this.state.amo));
   };
 
   render() {
     return (
       <div className="whole">
-        <h1>Debit: {this.props.debitBalance}</h1>
+        <h1> Debit Score </h1>
         <h3>Account Balance: {this.props.accountBalance}</h3>
-        <h3>Total Debits: {this.state.total}</h3>
+        <h3>Total Debits: {this.props.debitBalance}</h3>
         {/* <Inputbar change={this.updateZip} search={this.search} /> */}
 
         <div className="disbox">
@@ -57,9 +64,9 @@ class DebitPage extends Component {
             this.state.data.map(ct => <Infobox key={ct.id} credit={ct} />)}
         </div>
         <div className="inputbox">
-          <h6>Credit Description</h6>
+          <h6>Debit Description</h6>
           <input onChange={this.desChange} type="text" />
-          <h6>Credit Amount</h6>
+          <h6>Debit Amount</h6>
           <input onChange={this.amoChange} type="text" />
           <div>
             <button onClick={this.addcredit}>Add Credit</button>
