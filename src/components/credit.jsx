@@ -2,6 +2,7 @@ import "./credit.css";
 import axios from "axios";
 import React, { Component } from "react";
 import Infobox from "./infoBox";
+import {Link} from "react-router-dom";
 
 class CreditPage extends Component {
   state = { data: [], total: 0, des: "", amo: "", key: 666 };
@@ -63,6 +64,7 @@ class CreditPage extends Component {
           <div>
             <button onClick={this.addcredit}>Add Credit</button>
             {/* 怎么视角自动跟踪 ！！ */}
+            <Link to="/">Back to Homepage</Link>
           </div>
         </div>
       </div>

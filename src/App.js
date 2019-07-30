@@ -21,6 +21,8 @@ class App extends Component {
     };
   }
 
+  
+
   render() {
     const HomeComponent = () => (
       <Home
@@ -47,10 +49,24 @@ class App extends Component {
         {...this.props}
       />
     );
+
+    const updateAcc = (input) => {
+      this.setState({
+        accountBalance : input
+      })
+    }
+  
+    const updateDeb = (input) => {
+      this.setState({
+        debitBalance : input
+      })
+    }
     const DebitComponent = () => (
       <DebitPage
         debitBalance={this.state.debitBalance}
         accountBalance={this.state.accountBalance}
+        updateAcc={updateAcc}
+        updateDeb={updateDeb}
       />
     );
     const CreditComponent = () => (

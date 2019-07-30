@@ -2,6 +2,7 @@ import "./credit.css";
 import React, { Component } from "react";
 import axios from "axios";
 import Infobox from "./infoBox";
+import {Link} from "react-router-dom";
 
 class DebitPage extends Component {
   state = { data: [], total: 0, des: "", amo: "", key: 7867 };
@@ -46,7 +47,7 @@ class DebitPage extends Component {
     return (
       <div className="whole">
         <h1>Debit: {this.props.debitBalance}</h1>
-        <h3>Account Balance: {this.props.creditBalance}</h3>
+        <h3>Account Balance: {this.props.accountBalance}</h3>
         <h3>Total Debits: {this.state.total}</h3>
         {/* <Inputbar change={this.updateZip} search={this.search} /> */}
 
@@ -63,6 +64,7 @@ class DebitPage extends Component {
           <div>
             <button onClick={this.addcredit}>Add Credit</button>
             {/* 怎么视角自动跟踪 ！！ */}
+            <Link to="/">Back to Homepage</Link>
           </div>
         </div>
       </div>
